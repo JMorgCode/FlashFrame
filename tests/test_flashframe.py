@@ -28,7 +28,9 @@ class TestFlashFrame(unittest.TestCase):
         border_size = 10
         solid_color = (255, 0, 0)
         fade_color = (255, 0, 0)
-        result = add_glow_effect(input_image, border_size, solid_color, fade_color)
+        result = add_glow_effect(
+            input_image, border_size, solid_color, fade_color
+        )
 
         # Check if the result is an image and has the expected dimensions
         self.assertIsInstance(result, Image.Image)

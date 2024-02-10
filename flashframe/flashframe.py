@@ -15,7 +15,10 @@ def capture_screenshot(area):
 # Function to add a glowing gradient border to an image
 def add_glow_effect(img, border_size, solid_color, fade_color):
     original_size = img.size
-    new_size = (original_size[0] + border_size * 2, original_size[1] + border_size * 2)
+    new_size = (
+        original_size[0] + border_size * 2,
+        original_size[1] + border_size * 2,
+    )
 
     # Create a new image with a transparent background
     new_img = Image.new("RGBA", new_size, (0, 0, 0, 0))
@@ -77,8 +80,14 @@ def handle_screenshot():
         191,
         255,
     )  # Solid color for the part of the glow closest to the photo
-    fade_color = (0, 191, 255)  # Same color for the fading part, alpha will be adjusted
-    bordered_screenshot = add_glow_effect(screenshot, 30, solid_color, fade_color)
+    fade_color = (
+        0,
+        191,
+        255,
+    )  # Same color for the fading part, alpha will be adjusted
+    bordered_screenshot = add_glow_effect(
+        screenshot, 30, solid_color, fade_color
+    )
     save_image_to_clipboard(bordered_screenshot)
     print("Screenshot taken and saved to clipboard.")
 
