@@ -73,6 +73,11 @@ def on_press(key):
     if key == keyboard.Key.f12:  # Customize the hotkey
         handle_screenshot()
 
-# Listen for the hotkey
-with keyboard.Listener(on_press=on_press) as listener:
-    listener.join()
+def start_listener():
+    # Listen for the hotkey
+    with keyboard.Listener(on_press=on_press) as listener:
+        listener.join()
+
+if __name__ == "__main__":
+    start_listener()
+

@@ -1,0 +1,7 @@
+version: 2
+updates:
+  - package-ecosystem: 'pip' # Target Python/pip files
+    directory: '/' # Root directory
+    schedule:
+      interval: 'weekly' # Check daily for updates/vulnerabilities
+    open-pull-requests-limit: 10 # Maximum number of open pull requests
